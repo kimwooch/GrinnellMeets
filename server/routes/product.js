@@ -106,4 +106,26 @@ router.post("/getProducts", (req, res) => {
 
 });
 
+
+//?id=${productId}&type=single
+router.post("/products_by_id", auth, (req, res) => {
+
+    let type = req.query.type
+    let productIds = req.query.id
+
+    if (type=="array") {
+
+    }
+
+    Product.find({'_id': {$in: productIds}})
+    .populate('writer')
+    .exec((err, product)=> {
+        if(err) return req.status(400).send(err)
+        return res.status(200).send(product)
+    })
+
+    //find the club information that belongs to the club id
+
+});
+
 module.exports = router;
