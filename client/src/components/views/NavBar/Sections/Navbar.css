@@ -2,10 +2,10 @@
 
 .menu {
   padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
+  border-bottom: solid 1px #BE514B;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+  box-shadow: 0 0 30px #BE514B;
+  background-color: #BE514B;
 }
 
 .menu__logo {
@@ -16,8 +16,18 @@
 .menu__logo a {
   display: inline-block;
   font-size: 20px;
+  font-family: Helvetica,Arial,sans-serif;
+  font-weight: bold;
   padding: 19px 20px;
+  color: black
+
 }
+.ant-menu{
+  background: #BE514B;
+  font-family:Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  display: inline;
+  }
 
 .menu__container .ant-menu-item {
   padding: 0px 5px;
@@ -50,8 +60,12 @@
   padding: 6px;
   margin-top: 8px;
   display: none !important; /* use of important to overwrite ant-btn */
-  background: #3e91f7;
+  background:#BE514B;
+  border-color: #491e1d;
+  color:#491e1d;
 }
+
+
 
 .menu_drawer .ant-drawer-body {
   padding: 0 !important;

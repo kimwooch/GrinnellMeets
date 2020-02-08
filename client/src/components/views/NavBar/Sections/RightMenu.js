@@ -22,10 +22,10 @@ function RightMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
-        <Menu.Item key="mail">
+        <Menu.Item className="modified-item" key="mail">
           <a href="/login">Signin</a>
         </Menu.Item>
-        <Menu.Item key="app">
+        <Menu.Item className="modified-item" key="app">
           <a href="/register">Signup</a>
         </Menu.Item>
       </Menu>
@@ -33,10 +33,10 @@ function RightMenu(props) {
   } else {
     return (
       <Menu mode={props.mode}>
-        <Menu.Item key="upload">
+        <Menu.Item className="modified-item" key="upload">
           <a href="/product/upload">Upload</a>
         </Menu.Item>
-        <Menu.Item key="logout">
+        <Menu.Item className="modified-item" key="logout">
           <a onClick={logoutHandler}>Logout</a>
         </Menu.Item>
       </Menu>

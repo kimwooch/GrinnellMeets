@@ -26,13 +26,14 @@ function CheckBox(props) {
                 type="checkbox"
                 checked={Checked.indexOf(value._id) === -1 ? false : true}
             />&nbsp;&nbsp;
-            <span>{value.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>{value.name}</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </React.Fragment>
     ))
     return (
         <div>
             <Collapse defaultActiveKey={['0']} >
-                <Panel header="Clubs" key="1">
+                <Panel header="Club Categories" key="1">
                     {renderCheckboxLists()}
                 </Panel>
             </Collapse>
