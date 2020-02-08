@@ -27,6 +27,17 @@ function FileUpload(props) {
 
 
     }
+
+    // delete the image by getting the current index of the image and deleting it on the click
+    const onDelete = (image) => {
+        const currentIndex = Images.indexOf(image)
+        let newImages = [...Images]
+        newImages.splice(currentIndex)
+
+        setImages(newImages)
+        props.refreshFunction(newImages)
+    }
+
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Dropzone
@@ -44,14 +55,19 @@ function FileUpload(props) {
                     </div>
                 )}
             </Dropzone>
+            
             <div style={{ display: 'flex', width: '350px', height: '240px', overflowX: 'scroll' }}>
-                <div onClick>
-                    <img />
+                {/* bring the images state at the top here. Since the state consists of an array, we map them. */}
+                {Images.map((images, index) => (
+                    <div onClick={() => onDelete(images)}>
+                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={'http://localhost:5000/${image}'} alt={'productImg-${index}'} />
+                        </div>
+                ))}
+                
+                
                 </div>
             </div >
-
-        </div >
-    )
+            )
 }
 
 export default FileUpload
