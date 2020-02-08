@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { Icon, Col, Card, Row } from 'antd';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
+import { clubs } from './Sections/Datas';
 
 const { Meta } = Card;
 
@@ -13,6 +14,10 @@ function LandingPage() {
     const [Skip, setSkip] = useState(0)
     const [Limit, setLimit] = useState(8)
     const [PostSize, setPostSize] = useState(0)
+    const [Filters, setFilters] = useState({
+        clubs: [],
+        price: []
+    })
 
     useEffect(() => {
 
@@ -65,9 +70,27 @@ function LandingPage() {
             </Card>
         </Col>
     })
+    const showFilteredResults = (filters) => {
+
+        const variables = {
+            skip: 0,
+            limit: Limit,
+            filters: filters
+        }
+        getProducts(variables)
+        setSkip(0)
+
+    }
 
     const handleFilters = (filters, category) => {
+        console.log(filters)
+        const newFilters = { ...Filters }
+        newFilters[category] = filters
+        if (category === "price") {
 
+        }
+        showFilteredResults(newFilters)
+        setFilters(newFilters)
     }
 
     return (
@@ -76,9 +99,15 @@ function LandingPage() {
                 <h2> Find Your Community </h2>
             </div>
 
-            <CheckBox
-                handleFilters={filters => handleFilters(filters, "clubs")}
-            />
+            {/* Filter */}
+
+            <Row gutter={[16, 16]}>
+                <CheckBox
+                    list={clubs}
+                    handleFilters={filters => handleFilters(filters, "clubs")}
+                />
+            </Row>
+
 
             {Products.length === 0 ?
                 <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
