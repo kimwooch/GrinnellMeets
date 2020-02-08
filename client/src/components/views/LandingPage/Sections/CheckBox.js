@@ -4,35 +4,49 @@ import { Checkbox, Collapse } from 'antd'
 const { Panel } = Collapse
 
 
-const continents = [
+const clubs = [
     {
         "_id": 1,
-        "name": "Africa"
+        "name": "Advocacy and Support"
     },
     {
         "_id": 2,
-        "name": "Europe"
+        "name": "Activity"
     },
     {
         "_id": 3,
-        "name": "Asia"
+        "name": "Athletics"
     },
     {
         "_id": 4,
-        "name": "North America"
+        "name": "Food"
     },
     {
         "_id": 5,
-        "name": "South America"
+        "name": "Multicultural"
     },
     {
         "_id": 6,
-        "name": "Australia"
+        "name": "Performance, Art, and Publication"
     },
     {
         "_id": 7,
-        "name": "Antarctica"
+        "name": "Political"
+    },
+    {
+        "_id": 8,
+        "name": "Religious and Spiritual"
+    },
+    {
+        "_id": 9,
+        "name": "Social Justice and Activism"
+    },
+    {
+        "_id": 10,
+        "name": "Other"
     }
+
+
 ]
 
 
@@ -54,7 +68,7 @@ function CheckBox(props) {
         props.handleFilters(newChecked)
 
     }
-    const renderCheckboxLists = () => continents.map((value, index) => (
+    const renderCheckboxLists = () => clubs.map((value, index) => (
         <React.Fragment key={index}>
             <Checkbox
                 onChange={() => handleToggle(value._id)}

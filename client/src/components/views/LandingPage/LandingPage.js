@@ -77,7 +77,7 @@ function LandingPage() {
             </div>
 
             <CheckBox
-                handleFilters={filters => handleFilters(filters, "continents")}
+                handleFilters={filters => handleFilters(filters, "clubs")}
             />
 
             {Products.length === 0 ?
