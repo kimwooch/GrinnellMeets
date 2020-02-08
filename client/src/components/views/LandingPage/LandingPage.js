@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { Icon, Col, Card, Row } from 'antd';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
+import { clubs } from './Sections/Datas'
 import SearchFeature from './Sections/SearchFeature';
 import Search from 'antd/lib/input/Search';
 
@@ -98,12 +99,11 @@ function LandingPage() {
         }
 
         showFilteredResults(newFilters)
-
+        setFilters(newFilters)
     }
 
 
     const updateSearchTerms = (newSearchTerm) => {
-        setSearchTerms(newSearchTerm)
 
         const variables = {
             skip: 0,
@@ -113,6 +113,7 @@ function LandingPage() {
         }
 
         setSkip(0)
+        setSearchTerms(newSearchTerm)
 
         getProducts(variables)
 
@@ -128,6 +129,7 @@ function LandingPage() {
 
             {/*all the checked information in the filters inside the checkbox*/}
             <CheckBox
+                list={clubs}
                 handleFilters={filters => handleFilters(filters, "clubs")}
             />
 
