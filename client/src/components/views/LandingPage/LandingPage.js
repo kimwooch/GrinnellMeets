@@ -11,21 +11,45 @@ function LandingPage() {
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [Limit, setLimit] = useState(8)
+    const [PostSize, setPostSize] = useState(0)
 
     useEffect(() => {
-        Axios.post('/api/product/getProducts')
+
+        const variables = {
+            skip: Skip,
+            limit: Limit,
+        }
+
+        getProducts(variables)
+
+    }, [])
+
+    const getProducts = (variables) => {
+        Axios.post('/api/product/getProducts', variables)
             .then(response => {
                 if (response.data.success) {
-                    setProducts(response.data.products)
-                    console.log(response.data.products)
+                    if (variables.loadMore) {
+                        setProducts([...Products, ...response.data.products])
+                    } else {
+                        setProducts(response.data.products)
+                    }
+                    setPostSize(response.data.postSize)
                 } else {
-                    alert('Failed to fetch product datas')
+                    alert('Failed to fectch product datas')
                 }
             })
-    }, [])
+    }
 
     const onLoadMore = () => {
         let skip = Skip + Limit;
+        const variables = {
+            skip: skip,
+            limit: Limit,
+            loadMore: true
+
+        }
+        getProducts(variables)
+        setSkip(skip)
     }
     const renderCards = Products.map((product, index) => {
         return <Col lg={6} md={8} xs={24}>
@@ -62,6 +86,14 @@ function LandingPage() {
                 </div>
             }
             <br></br>
+
+
+
+            {PostSize >= Limit &&
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <button onClick={onLoadMore}>Load More</button>
+                </div>
+            }
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <button onClick={onLoadMore}>Load More</button>
             </div>
