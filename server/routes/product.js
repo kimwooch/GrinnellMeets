@@ -76,16 +76,33 @@ router.post("/getProducts", (req, res) => {
         }
     }
 
-    //save the data from the client into the DB 
-    Product.find(findArgs)
-        .populate("writer")
-        .sort([[sortBy, order]])
-        .skip(skip)
-        .limit(limit)
-        .exec((err, products) => {
-            if (err) return res.status(400).json({ success: false, err })
-            res.status(200).json({ success: true, products, postSize: products.length })
-        })
+    if(term) {
+        //save the data from the client into the DB 
+        Product.find(findArgs)
+            .find({  $text: {$search: term}})       //mongoDB method that allows the function to actually work
+            .populate("writer")
+            .sort([[sortBy, order]])
+            .skip(skip)
+            .limit(limit)
+            .exec((err, products) => {
+                if (err) return res.status(400).json({ success: false, err })
+                res.status(200).json({ success: true, products, postSize: products.length })
+            })
+    } else {
+
+        //save the data from the client into the DB 
+        Product.find(findArgs)
+            .populate("writer")
+            .sort([[sortBy, order]])
+            .skip(skip)
+            .limit(limit)
+            .exec((err, products) => {
+                if (err) return res.status(400).json({ success: false, err })
+                res.status(200).json({ success: true, products, postSize: products.length })
+ })
+
+    }
+   
 
 });
 
