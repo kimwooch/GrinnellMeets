@@ -15,7 +15,7 @@ function LandingPage() {
     const [Skip, setSkip] = useState(0)
     const [Limit, setLimit] = useState(8)
     const [PostSize, setPostSize] = useState(0)
-    const [SearchTerms, setSearchTerms] = useState("")
+    const [SearchTerm, setSearchTerms] = useState("")
     const [Filters, setFilters] = useState({
         clubs: []
     })
@@ -111,7 +111,7 @@ function LandingPage() {
 
         setSkip(0)
         setSearchTerms(newSearchTerm)
-
+        console.log(newSearchTerm)
         getProducts(variables)
 
 

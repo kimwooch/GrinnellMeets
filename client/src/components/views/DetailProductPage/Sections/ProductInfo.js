@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Descriptions } from 'antd';
-
+// import { clubs } from './Sections/Datas';
 //export const ClubInfo = (props) => {
 function ProductInfo(props) {
 
