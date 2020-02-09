@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import ImageGallery from 'react-image-gallery';
 
-export default function ClubImage(props) {
+//export default function ClubImage(props) {
+function ClubImage(props) {
 
-    const [Images, setImages] = useState(initialState)
+    const [Images, setImages] = useState([])
     useEffect(() => {
         // more than one image
         if(props.detail.images && props.detail.images.length > 0) {
@@ -27,3 +28,5 @@ export default function ClubImage(props) {
         </div>
     )
 }
+
+export default ClubImage

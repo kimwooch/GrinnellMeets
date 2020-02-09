@@ -31,7 +31,6 @@ function DetailedClubPage(props) {
                 </Col>
                 <Col lg={12} xs={24}>
                     <ClubInfo
-                        addToCart={addToCartHandler}
                         detail={Product} />
                 </Col>
             </Row>
