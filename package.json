@@ -13,7 +13,7 @@
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "John Ans, Kevin Kim, Yoon Choi",
+  "author": "Kevin Kim, Yoon Choi",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.8",

@@ -9,19 +9,11 @@ function DetailedClubPage(props) {
     const productId = props.match.params.productId
     const [Product, setProduct] = useState([])
     useEffect(() => {
-<<<<<<< HEAD
         Axios.get('/api/product/products_by_id?id=${productId}&type=single')
             .then(response => {
                 //fetch production info from the database
                 setProduct(response.data[0])
             })
-=======
-        Axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
-        .then(response => {
-            //fetch production info from the database
-            setProduct(response.data[0])
-        })
->>>>>>> fbfe3e7c06b5aae5adbe4370ed437342c56ab991
     }, [])
 
     return (
