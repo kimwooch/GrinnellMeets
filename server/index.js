@@ -12,7 +12,7 @@ const config = require("./config/key");
 // mongoose
 //   .connect(config.mongoURI, { useNewUrlParser: true })
 //   .then(() => console.log("DB connected"))
-//   .catch(err => console.error(err));
+//  .catch(err => console.error(err));
 
 const mongoose = require("mongoose");
 const connect = mongoose.connect(config.mongoURI,
