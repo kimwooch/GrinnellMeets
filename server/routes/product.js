@@ -110,7 +110,7 @@ router.post("/getProducts", (req, res) => {
 
 
 //?id=${productId}&type=single
-router.post("/products_by_id", (req, res) => {
+router.get("/products_by_id", (req, res) => {
 
     let type = req.query.type
     let productIds = req.query.id

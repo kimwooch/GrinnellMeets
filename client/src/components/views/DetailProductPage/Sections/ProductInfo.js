@@ -12,9 +12,9 @@ function ProductInfo(props) {
     return (
         <div>
             <Descriptions title="Club Info">
-                <Descriptions.Item label="Price"> {Product.price}</Descriptions.Item>
-                <Descriptions.Item label="Sold">{Product.sold}</Descriptions.Item>
-                <Descriptions.Item label="View"> {Product.views}</Descriptions.Item>
+                <Descriptions.Item label="Club Name"> {Product.title}</Descriptions.Item>
+                <Descriptions.Item label="Club Email">{Product.email}</Descriptions.Item>
+                <Descriptions.Item label="Primary Contact"> {Product.contact}</Descriptions.Item>
                 <Descriptions.Item label="Description"> {Product.description}</Descriptions.Item>
             </Descriptions>
 

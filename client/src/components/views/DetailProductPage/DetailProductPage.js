@@ -9,7 +9,7 @@ function DetailProductPage(props) {
     const productId = props.match.params.productId
     const [Product, setProduct] = useState([])
     useEffect(() => {
-        Axios.get('/api/product/products_by_id?id=${productId}&type=single')
+        Axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
             .then(response => {
                 //fetch production info from the database
                 setProduct(response.data[0])
