@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Row, Col } from 'antd';
-import ClubImage from './Sections/ClubImage';
-import ClubInfo from './Sections/ClubInfo';
+import ProductImage from './Sections/ProductImage';
+import ProductInfo from './Sections/ProductInfo';
 
-function DetailedClubPage(props) {
+function DetailProductPage(props) {
 
     const productId = props.match.params.productId
     const [Product, setProduct] = useState([])
@@ -27,10 +27,10 @@ function DetailedClubPage(props) {
 
             <Row gutter={[16, 16]} >
                 <Col lg={12} xs={24}>
-                    <ClubImage detail={Product} />
+                    <ProductImage detail={Product} />
                 </Col>
                 <Col lg={12} xs={24}>
-                    <ClubInfo
+                    <ProductInfo
                         detail={Product} />
                 </Col>
             </Row>
@@ -38,4 +38,4 @@ function DetailedClubPage(props) {
     )
 }
 
-export default DetailedClubPage
+export default DetailProductPage

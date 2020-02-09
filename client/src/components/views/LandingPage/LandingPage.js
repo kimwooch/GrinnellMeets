@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { FaCode } from "react-icons/fa";
 import Axios from 'axios';
 import { Icon, Col, Card, Row } from 'antd';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
 import { clubs } from './Sections/Datas'
 import SearchFeature from './Sections/SearchFeature';
-import Search from 'antd/lib/input/Search';
 
 
 const { Meta } = Card;
@@ -19,8 +17,7 @@ function LandingPage() {
     const [PostSize, setPostSize] = useState(0)
     const [SearchTerms, setSearchTerms] = useState("")
     const [Filters, setFilters] = useState({
-        clubs: [],
-        price: []
+        clubs: []
     })
 
     useEffect(() => {
@@ -69,7 +66,7 @@ function LandingPage() {
             >
                 <Meta
                     title={product.title}
-                    description
+                    description={""}
                 />
             </Card>
         </Col>
@@ -77,24 +74,24 @@ function LandingPage() {
 
 
     const showFilteredResults = (filters) => {
-        
+
         const variables = {
             skip: 0,
             limit: Limit,
             filters: filters
         }
-        
+
         getProducts(variables)
         setSkip(0)
 
     }
     //when clicked the clicked item information goes inside the filters
     const handleFilters = (filters, category) => {
-        const newFilters = {...Filters}
+        const newFilters = { ...Filters }
 
         newFilters[category] = filters
 
-        if(category === "") {
+        if (category === "") {
 
         }
 
@@ -128,14 +125,16 @@ function LandingPage() {
             </div>
 
             {/*all the checked information in the filters inside the checkbox*/}
+
             <CheckBox
                 list={clubs}
                 handleFilters={filters => handleFilters(filters, "clubs")}
             />
 
+
             {/* Search Feature~ */}
             {/* template for the search feature*/}
-            <div style={{display:'flex', justifyContent:'flex-end', margin:'1rem auto'}}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
                 <SearchFeature
                     refreshFunction={updateSearchTerms}
                 />
@@ -164,9 +163,6 @@ function LandingPage() {
                     <button onClick={onLoadMore}>Load More</button>
                 </div>
             }
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <button onClick={onLoadMore}>Load More</button>
-            </div>
 
         </div>
     )

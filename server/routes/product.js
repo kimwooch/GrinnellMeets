@@ -33,7 +33,9 @@ router.post("/uploadImage", auth, (req, res) => {
 
     //Multer library
     upload(req, res, err => {
-        if (err) return res.json({ success: false, err })
+        if (err) {
+            return res.json({ success: false, err })
+        }
         return res.json({ success: true, image: res.req.file.path, fileName: res.req.file.filename })
     }
 
@@ -76,10 +78,10 @@ router.post("/getProducts", (req, res) => {
         }
     }
 
-    if(term) {
+    if (term) {
         //save the data from the client into the DB 
         Product.find(findArgs)
-            .find({  $text: {$search: term}})       //mongoDB method that allows the function to actually work
+            .find({ $text: { $search: term } })       //mongoDB method that allows the function to actually work
             .populate("writer")
             .sort([[sortBy, order]])
             .skip(skip)
@@ -99,30 +101,34 @@ router.post("/getProducts", (req, res) => {
             .exec((err, products) => {
                 if (err) return res.status(400).json({ success: false, err })
                 res.status(200).json({ success: true, products, postSize: products.length })
- })
+            })
 
     }
-   
+
 
 });
 
 
 //?id=${productId}&type=single
-router.post("/products_by_id", auth, (req, res) => {
+router.post("/products_by_id", (req, res) => {
 
     let type = req.query.type
     let productIds = req.query.id
 
-    if (type=="array") {
-
+    if (type === "array") {
+        let ids = req.query.id.split(',');
+        productIds = [];
+        productIds = ids.map(item => {
+            return item
+        })
     }
 
-    Product.find({'_id': {$in: productIds}})
-    .populate('writer')
-    .exec((err, product)=> {
-        if(err) return req.status(400).send(err)
-        return res.status(200).send(product)
-    })
+    Product.find({ '_id': { $in: productIds } })
+        .populate('writer')
+        .exec((err, product) => {
+            if (err) return req.status(400).send(err)
+            return res.status(200).send(product)
+        })
 
     //find the club information that belongs to the club id
 

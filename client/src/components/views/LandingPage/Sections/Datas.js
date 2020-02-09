@@ -1,11 +1,11 @@
 const clubs = [
     {
         "_id": 1,
-        "name": "Advocacy and Support"
+        "name": "Academic/Career/Intellectual"
     },
     {
         "_id": 2,
-        "name": "Activity"
+        "name": "Arts/Creativity"
     },
     {
         "_id": 3,
@@ -13,30 +13,42 @@ const clubs = [
     },
     {
         "_id": 4,
-        "name": "Food"
+        "name": "Educational Activism"
     },
     {
         "_id": 5,
-        "name": "Multicultural"
+        "name": "Environmental Activism"
     },
     {
         "_id": 6,
-        "name": "Performance, Art, and Publication"
+        "name": "Food"
     },
     {
         "_id": 7,
-        "name": "Political"
+        "name": "Health"
     },
     {
         "_id": 8,
-        "name": "Religious and Spiritual"
+        "name": "Identity"
     },
     {
         "_id": 9,
-        "name": "Social Justice and Activism"
+        "name": "Outdoors/Agricultural/Environmental"
     },
     {
         "_id": 10,
+        "name": "Political Activism"
+    },
+    {
+        "_id": 11,
+        "name": "Social Activism"
+    },
+    {
+        "_id": 12,
+        "name": "Support/Discussion"
+    },
+    {
+        "_id": 13,
         "name": "Other"
     }
 

@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import {Button, Descriptions } from 'antd';
+import React, { useEffect, useState } from 'react'
+import { Button, Descriptions } from 'antd';
 
 //export const ClubInfo = (props) => {
-function ClubInfo(props) {
+function ProductInfo(props) {
 
     const [Product, setProduct] = useState({})
     useEffect(() => {
@@ -32,4 +32,4 @@ function ClubInfo(props) {
     )
 }
 
-export default ClubInfo
+export default ProductInfo

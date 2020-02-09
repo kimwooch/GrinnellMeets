@@ -7,21 +7,26 @@ const { Title } = Typography;
 const { TextArea } = Input;
 
 const ClubType = [
-    { key: 1, value: "Advocacy and Support" },
-    { key: 2, value: "Activity" },
+    { key: 1, value: "Academic/Career/Intellectual" },
+    { key: 2, value: "Arts/Creativity" },
     { key: 3, value: "Athletics" },
-    { key: 4, value: "Food" },
-    { key: 5, value: "Multicultural" },
-    { key: 6, value: "Performance, Art, and Publication" },
-    { key: 7, value: "Political" },
-    { key: 8, value: "Religious and Spiritual" },
-    { key: 9, value: "Social Justice and Activism" },
-    { key: 10, value: "Other" }
+    { key: 4, value: "Educational Activism" },
+    { key: 5, value: "Environmental Activism" },
+    { key: 6, value: "Food" },
+    { key: 7, value: "Health" },
+    { key: 8, value: "Identity" },
+    { key: 9, value: "Outdoors/Agricultural/Environmental" },
+    { key: 10, value: "Political Activism" },
+    { key: 11, value: "Social Activism" },
+    { key: 12, value: "Support/Discussion" },
+    { key: 13, value: "Other" },
 ]
 
 function UploadProductPage(props) {
     const [TitleValue, setTitleValue] = React.useState("")
     const [DescriptionValue, setDescriptionValue] = React.useState("")
+    const [ContactValue, setContactValue] = React.useState("")
+    const [EmailValue, setEmailValue] = React.useState("")
     const [ClubValue, setClubValue] = useState(1)
 
     const [Images, setImages] = useState([])
@@ -30,6 +35,12 @@ function UploadProductPage(props) {
     }
     const onDescriptionChange = (event) => {
         setDescriptionValue(event.currentTarget.value)
+    }
+    const onContactChange = (event) => {
+        setContactValue(event.currentTarget.value)
+    }
+    const onEmailChange = (event) => {
+        setEmailValue(event.currentTarget.value)
     }
     const onClubSelectChange = (event) => {
         setClubValue(event.currentTarget.value)
@@ -43,7 +54,7 @@ function UploadProductPage(props) {
         event.preventDefault();
 
         if (!TitleValue || !DescriptionValue || !ClubValue || !Images) {
-            return alert('fill all the fields first!')
+            return alert('fill in the name, description, and category of clubs and upload images for your club!')
         }
 
         const variables = {
@@ -53,6 +64,8 @@ function UploadProductPage(props) {
             description: DescriptionValue,
             images: Images,
             clubs: ClubValue,
+            contact: ContactValue,
+            email: EmailValue,
         }
 
         // push the product to / if successful if not alert the failure
@@ -67,24 +80,41 @@ function UploadProductPage(props) {
             })
 
     }
-    
+
     return (
         <div style={{ maxWidth: '700px', margin: '2rem auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <Title level={2}> Upload Student Organizations</Title>
+                <Title level={2}> Upload Your Student Organization</Title>
             </div>
             <Form onSubmit={onSubmit}>
                 {/*Dropzone*/}
                 <FileUpload refreshFunction={updateImages} />
                 <br />
                 <br />
-                <label>Title</label>
+                <label>Name</label>
                 <Input
                     onChange={onTitleChange}
                     value={TitleValue}
                 />
                 <br />
                 <br />
+
+                <label>Primary Contact</label>
+                <Input
+                    onChange={onContactChange}
+                    value={ContactValue}
+                />
+                <br />
+                <br />
+
+                <label>Group Email Address</label>
+                <Input
+                    onChange={onEmailChange}
+                    value={EmailValue}
+                />
+                <br />
+                <br />
+
                 <label>Description</label>
                 <TextArea
                     onChange={onDescriptionChange}
@@ -102,7 +132,7 @@ function UploadProductPage(props) {
                 <br />
                 <br />
                 <Button
-                     onClick={onSubmit}
+                    onClick={onSubmit}
                 >
                     Submit
                 </Button>

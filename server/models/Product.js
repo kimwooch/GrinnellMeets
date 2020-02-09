@@ -21,12 +21,20 @@ const productSchema = mongoose.Schema({
     clubs: {
         type: Number,
         default: 1
+    },
+    contact: {
+        type: String,
+        maxlength: 50
+    },
+    email: {
+        type: String,
+        maxlength: 50
     }
 }, { timestamps: true })
 
 
-productSchema.index({ 
-    title:'text',
+productSchema.index({
+    title: 'text',
     description: 'text',
 }, {
     weights: {
