@@ -1,4 +1,4 @@
-# Student Organization
+# Grinnell Meets
 
 ## Getting Started
 
