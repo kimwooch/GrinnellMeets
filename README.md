@@ -1,5 +1,11 @@
 # Grinnell Meets
 
+### Home Page
+<img width="750" alt="Screen Shot 2020-02-11 at 10 51 43 AM" src="https://user-images.githubusercontent.com/25372543/74259281-46e27e80-4cbd-11ea-8537-2889caf11972.png">
+
+### Upload Page
+<img width="750" alt="Screen Shot 2020-02-11 at 10 53 06 AM" src="https://user-images.githubusercontent.com/25372543/74259373-68dc0100-4cbd-11ea-8d27-2734b3e2236e.png">
+
 ## Getting Started
 
 To get started with the app, clone the repo and then put your mongoDB info into dev.js file:
