@@ -3,11 +3,11 @@
 ### Home Page
 <img width="750" alt="Screen Shot 2020-02-11 at 10 51 43 AM" src="https://user-images.githubusercontent.com/25372543/74259281-46e27e80-4cbd-11ea-8537-2889caf11972.png">
 
+### Info Page
+<img width="750" alt="Screen Shot 2020-02-11 at 11 42 25 AM" src="https://user-images.githubusercontent.com/25372543/74263113-cf641d80-4cc3-11ea-825d-2244504173bf.png">
+
 ### Upload Page
 <img width="750" alt="Screen Shot 2020-02-11 at 10 53 06 AM" src="https://user-images.githubusercontent.com/25372543/74259373-68dc0100-4cbd-11ea-8d27-2734b3e2236e.png">
-
-### Club Information Page
-<img width="750" alt="Screen Shot 2020-02-11 at 11 42 25 AM" src="https://user-images.githubusercontent.com/25372543/74263113-cf641d80-4cc3-11ea-825d-2244504173bf.png">
 
 
 ## Getting Started
