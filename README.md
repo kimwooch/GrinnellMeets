@@ -6,6 +6,10 @@
 ### Upload Page
 <img width="750" alt="Screen Shot 2020-02-11 at 10 53 06 AM" src="https://user-images.githubusercontent.com/25372543/74259373-68dc0100-4cbd-11ea-8d27-2734b3e2236e.png">
 
+### Club Information Page
+<img width="750" alt="Screen Shot 2020-02-11 at 11 42 25 AM" src="https://user-images.githubusercontent.com/25372543/74263113-cf641d80-4cc3-11ea-825d-2244504173bf.png">
+
+
 ## Getting Started
 
 To get started with the app, clone the repo and then put your mongoDB info into dev.js file:
