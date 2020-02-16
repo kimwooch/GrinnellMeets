@@ -45,6 +45,7 @@ app.use('/uploads', express.static('uploads'));
 if (process.env.NODE_ENV === "production") {
 
   // Set static folder
+  // All the js and css files will be read and served from this folder
   app.use(express.static("client/build"));
 
   // index.html for all page routes
