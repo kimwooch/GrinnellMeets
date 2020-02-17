@@ -55,19 +55,19 @@ function FileUpload(props) {
                     </div>
                 )}
             </Dropzone>
-            
+
             <div style={{ display: 'flex', width: '350px', height: '240px', overflowX: 'scroll' }}>
                 {/* bring the images state at the top here. Since the state consists of an array, we map them. */}
                 {Images.map((image, index) => (
                     <div onClick={() => onDelete(image)}>
-                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`http://localhost:5000/${image}`} alt={`productImg-${index}`} />
-                        </div>
+                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`/${image}`} alt={`productImg-${index}`} />
+                    </div>
                 ))}
-                
-                
-                </div>
-            </div >
-            )
+
+
+            </div>
+        </div >
+    )
 }
 
 export default FileUpload
