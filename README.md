@@ -1,5 +1,7 @@
 # Grinnell Meets
 
+Click to view the webiste http://www.grinnellmeets.com/
+
 ### Home Page
 <img width="750" alt="Screen Shot 2020-02-11 at 10 51 43 AM" src="https://user-images.githubusercontent.com/25372543/74259281-46e27e80-4cbd-11ea-8537-2889caf11972.png">
 
