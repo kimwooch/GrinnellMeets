@@ -1,6 +1,7 @@
 # Grinnell Meets
 
 A MERN Stack website that enables students to upload and promote their student organizations.
+
 Click to view the webiste http://www.grinnellmeets.com/
 
 ### Home Page
